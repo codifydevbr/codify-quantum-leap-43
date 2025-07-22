@@ -1,92 +1,54 @@
 import { Link } from "react-router-dom";
-import { 
-  ArrowRight, 
-  Code, 
-  Smartphone, 
-  Cloud, 
-  Zap, 
-  Shield, 
-  Cpu,
-  CheckCircle,
-  Star,
-  Play
-} from "lucide-react";
+import { ArrowRight, Code, Smartphone, Cloud, Zap, Shield, Cpu, CheckCircle, Star, Play } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import SEOHead from "@/components/SEOHead";
-
 const Home = () => {
-  const services = [
-    {
-      icon: Code,
-      title: "Desenvolvimento Web",
-      description: "Sites e aplicações web modernas com tecnologia de ponta",
-      delay: "0s"
-    },
-    {
-      icon: Smartphone,
-      title: "Apps Mobile",
-      description: "Aplicativos nativos e híbridos para iOS e Android",
-      delay: "0.1s"
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      description: "Infraestrutura escalável e automatizada na nuvem",
-      delay: "0.2s"
-    },
-    {
-      icon: Cpu,
-      title: "IA & Automação",
-      description: "Soluções inteligentes com Machine Learning",
-      delay: "0.3s"
-    },
-  ];
-
-  const features = [
-    "Tecnologia de última geração",
-    "Equipe especializada",
-    "Suporte 24/7",
-    "Entrega no prazo",
-    "Código limpo e documentado",
-    "Testes automatizados"
-  ];
-
-  const testimonials = [
-    {
-      name: "Carlos Silva",
-      company: "TechCorp",
-      content: "A Codify transformou nossa ideia em um produto incrível. Superaram todas as expectativas!",
-      rating: 5
-    },
-    {
-      name: "Ana Costa",
-      company: "StartupXYZ",
-      content: "Profissionalismo e qualidade excepcionais. Recomendo fortemente!",
-      rating: 5
-    },
-    {
-      name: "Pedro Santos",
-      company: "InnovateLab",
-      content: "Desenvolveram nossa plataforma em tempo recorde sem comprometer a qualidade.",
-      rating: 5
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
-      <SEOHead
-        title="Codify | Desenvolvimento de Software Personalizado e Inovador"
-        description="A Codify é uma empresa brasileira especializada em desenvolvimento de software sob demanda, aplicativos mobile, APIs e soluções digitais inovadoras. Transforme sua ideia em realidade!"
-        keywords="desenvolvimento de software, empresa de software, software sob demanda, soluções digitais, software personalizado, Codify"
-        canonicalUrl="https://codify.dev.br/"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Codify - Desenvolvimento de Software Personalizado",
-          "description": "Transformamos suas ideias em soluções digitais inovadoras com tecnologia de ponta e design futurista.",
-          "url": "https://codify.dev.br/"
-        }}
-      />
+  const services = [{
+    icon: Code,
+    title: "Desenvolvimento Web",
+    description: "Sites e aplicações web modernas com tecnologia de ponta",
+    delay: "0s"
+  }, {
+    icon: Smartphone,
+    title: "Apps Mobile",
+    description: "Aplicativos nativos e híbridos para iOS e Android",
+    delay: "0.1s"
+  }, {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    description: "Infraestrutura escalável e automatizada na nuvem",
+    delay: "0.2s"
+  }, {
+    icon: Cpu,
+    title: "IA & Automação",
+    description: "Soluções inteligentes com Machine Learning",
+    delay: "0.3s"
+  }];
+  const features = ["Tecnologia de última geração", "Equipe especializada", "Suporte 24/7", "Entrega no prazo", "Código limpo e documentado", "Testes automatizados"];
+  const testimonials = [{
+    name: "Carlos Silva",
+    company: "TechCorp",
+    content: "A Codify transformou nossa ideia em um produto incrível. Superaram todas as expectativas!",
+    rating: 5
+  }, {
+    name: "Ana Costa",
+    company: "StartupXYZ",
+    content: "Profissionalismo e qualidade excepcionais. Recomendo fortemente!",
+    rating: 5
+  }, {
+    name: "Pedro Santos",
+    company: "InnovateLab",
+    content: "Desenvolveram nossa plataforma em tempo recorde sem comprometer a qualidade.",
+    rating: 5
+  }];
+  return <div className="min-h-screen">
+      <SEOHead title="Codify | Desenvolvimento de Software Personalizado e Inovador" description="A Codify é uma empresa brasileira especializada em desenvolvimento de software sob demanda, aplicativos mobile, APIs e soluções digitais inovadoras. Transforme sua ideia em realidade!" keywords="desenvolvimento de software, empresa de software, software sob demanda, soluções digitais, software personalizado, Codify" canonicalUrl="https://codify.dev.br/" schema={{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Codify - Desenvolvimento de Software Personalizado",
+      "description": "Transformamos suas ideias em soluções digitais inovadoras com tecnologia de ponta e design futurista.",
+      "url": "https://codify.dev.br/"
+    }} />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Static gradient background */}
@@ -97,7 +59,9 @@ const Home = () => {
           <div className="text-center max-w-4xl mx-auto">
             <div className="space-y-8 animate-slide-up">
               <h1 className="text-5xl md:text-7xl font-orbitron font-bold leading-tight">
-                <span className="cyber-text">Desenvolvimento de Software Personalizado para o Futuro</span>
+                <span className="cyber-text">Software do Futuro,
+Hoje.
+              </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
@@ -141,13 +105,19 @@ const Home = () => {
         
         {/* Additional floating particles */}
         <div className="absolute top-10 right-20 floating-element">
-          <div className="w-6 h-6 bg-neon-cyan rounded-full opacity-50 animate-orbital-motion" style={{ animationDelay: '-8s' }} />
+          <div className="w-6 h-6 bg-neon-cyan rounded-full opacity-50 animate-orbital-motion" style={{
+          animationDelay: '-8s'
+        }} />
         </div>
         <div className="absolute bottom-32 left-20 floating-element">
-          <div className="w-4 h-4 bg-primary rounded-full opacity-60 animate-matrix-drift" style={{ animationDelay: '-15s' }} />
+          <div className="w-4 h-4 bg-primary rounded-full opacity-60 animate-matrix-drift" style={{
+          animationDelay: '-15s'
+        }} />
         </div>
         <div className="absolute top-2/3 right-10 floating-element">
-          <div className="w-10 h-10 border border-secondary/40 rounded-full animate-gentle-glow" style={{ animationDelay: '-3s' }} />
+          <div className="w-10 h-10 border border-secondary/40 rounded-full animate-gentle-glow" style={{
+          animationDelay: '-3s'
+        }} />
         </div>
       </section>
 
@@ -164,12 +134,9 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className="group cyber-glass p-8 rounded-2xl hover-glow transition-all duration-500 cursor-pointer animate-fade-scale"
-                style={{ animationDelay: service.delay }}
-              >
+            {services.map((service, index) => <div key={service.title} className="group cyber-glass p-8 rounded-2xl hover-glow transition-all duration-500 cursor-pointer animate-fade-scale" style={{
+            animationDelay: service.delay
+          }}>
                 <div className="relative mb-6">
                   <div className="w-16 h-16 rounded-full cyber-glass flex items-center justify-center group-hover:glow-intense transition-all duration-500">
                     <service.icon className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
@@ -184,8 +151,7 @@ const Home = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -205,16 +171,12 @@ const Home = () => {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {features.map((feature, index) => (
-                  <div
-                    key={feature}
-                    className="flex items-center space-x-3 animate-fade-scale"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
+                {features.map((feature, index) => <div key={feature} className="flex items-center space-x-3 animate-fade-scale" style={{
+                animationDelay: `${index * 0.1}s`
+              }}>
                     <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0" />
                     <span className="text-foreground">{feature}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="pt-6">
@@ -261,16 +223,11 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.name}
-                className="glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {testimonials.map((testimonial, index) => <div key={testimonial.name} className="glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-secondary fill-current" />
-                  ))}
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-secondary fill-current" />)}
                 </div>
                 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -286,8 +243,7 @@ const Home = () => {
                     <div className="text-sm text-muted-foreground">{testimonial.company}</div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -323,11 +279,11 @@ const Home = () => {
         {/* Background effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-gentle-glow" />
-          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-gentle-glow" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-gentle-glow" style={{
+          animationDelay: '2s'
+        }} />
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
