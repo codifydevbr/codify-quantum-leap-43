@@ -1,97 +1,70 @@
 import { Users, Target, Eye, Heart, Clock, Award } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import SEOHead from "@/components/SEOHead";
-
 const About = () => {
-  const values = [
-    {
-      icon: Target,
-      title: "Missão",
-      description: "Transformar ideias em soluções digitais extraordinárias que impulsionam o sucesso dos nossos clientes."
-    },
-    {
-      icon: Eye,
-      title: "Visão",
-      description: "Ser a referência em desenvolvimento de software personalizado, criando o futuro da tecnologia hoje."
-    },
-    {
-      icon: Heart,
-      title: "Valores",
-      description: "Inovação, qualidade, transparência e compromisso com a excelência em cada projeto."
-    }
-  ];
-
-  const timeline = [
-    {
-      year: "2018",
-      title: "Fundação",
-      description: "Início da jornada com foco em desenvolvimento web moderno"
-    },
-    {
-      year: "2020",
-      title: "Expansão Mobile",
-      description: "Ampliação para desenvolvimento de aplicativos mobile"
-    },
-    {
-      year: "2022",
-      title: "IA & Cloud",
-      description: "Integração de soluções de inteligência artificial e cloud"
-    },
-    {
-      year: "2024",
-      title: "Liderança",
-      description: "Reconhecida como referência em tecnologia futurista"
-    }
-  ];
-
-  const team = [
-    {
-      name: "Clayton Araújo",
-      role: "CEO & Founder",
-      specialty: "Engenharia de Software",
-      initial: "C"
-    },
-    {
-      name: "Eugênio José Moura",
-      role: "CTO",
-      specialty: "Engenharia da Computação",
-      initial: "E"
-    },
-    {
-      name: "João Pedro Fragoso",
-      role: "Lead Developer",
-      specialty: "Ciências da Computação",
-      initial: "J"
-    },
-    {
-      name: "Isabela Nascimento",
-      role: "UX/UI Designer",
-      specialty: "Design Futurista",
-      initial: "I"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
-      <SEOHead
-        title="Sobre a Codify | Equipe, Missão e Valores da Empresa de Software"
-        description="Conheça a história, missão e valores da Codify, empresa focada em inovação e desenvolvimento de software sob medida para seu negócio crescer."
-        keywords="empresa de desenvolvimento de software, equipe de TI, missão, visão, valores, história Codify"
-        canonicalUrl="https://codify.dev.br/sobre"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          "name": "Sobre a Codify",
-          "description": "Somos uma equipe de visionários apaixonados por tecnologia, dedicados a criar o software do futuro.",
-          "url": "https://codify.dev.br/sobre"
-        }}
-      />
+  const values = [{
+    icon: Target,
+    title: "Missão",
+    description: "Transformar ideias em soluções digitais extraordinárias que impulsionam o sucesso dos nossos clientes."
+  }, {
+    icon: Eye,
+    title: "Visão",
+    description: "Ser a referência em desenvolvimento de software personalizado, criando o futuro da tecnologia hoje."
+  }, {
+    icon: Heart,
+    title: "Valores",
+    description: "Inovação, qualidade, transparência e compromisso com a excelência em cada projeto."
+  }];
+  const timeline = [{
+    year: "2018",
+    title: "Fundação",
+    description: "Início da jornada com foco em desenvolvimento web moderno"
+  }, {
+    year: "2020",
+    title: "Expansão Mobile",
+    description: "Ampliação para desenvolvimento de aplicativos mobile"
+  }, {
+    year: "2022",
+    title: "IA & Cloud",
+    description: "Integração de soluções de inteligência artificial e cloud"
+  }, {
+    year: "2024",
+    title: "Liderança",
+    description: "Reconhecida como referência em tecnologia futurista"
+  }];
+  const team = [{
+    name: "Clayton Araújo",
+    role: "CEO & Founder",
+    specialty: "Engenharia de Software",
+    initial: "C"
+  }, {
+    name: "Eugênio José Moura",
+    role: "CTO",
+    specialty: "Engenharia da Computação",
+    initial: "E"
+  }, {
+    name: "João Pedro Fragoso",
+    role: "Lead Developer",
+    specialty: "Ciências da Computação",
+    initial: "J"
+  }, {
+    name: "Isabela Nascimento",
+    role: "UX/UI Designer",
+    specialty: "Design Futurista",
+    initial: "I"
+  }];
+  return <div className="min-h-screen">
+      <SEOHead title="Sobre a Codify | Equipe, Missão e Valores da Empresa de Software" description="Conheça a história, missão e valores da Codify, empresa focada em inovação e desenvolvimento de software sob medida para seu negócio crescer." keywords="empresa de desenvolvimento de software, equipe de TI, missão, visão, valores, história Codify" canonicalUrl="https://codify.dev.br/sobre" schema={{
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Sobre a Codify",
+      "description": "Somos uma equipe de visionários apaixonados por tecnologia, dedicados a criar o software do futuro.",
+      "url": "https://codify.dev.br/sobre"
+    }} />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Conheça a Codify — Quem Somos
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">Sobre a Codify</h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Somos uma equipe de visionários apaixonados por tecnologia, 
             dedicados a criar o software do futuro com as melhores práticas do presente.
@@ -103,12 +76,9 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={value.title}
-                className="text-center space-y-6 glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {values.map((value, index) => <div key={value.title} className="text-center space-y-6 glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="w-16 h-16 mx-auto rounded-full glass flex items-center justify-center glow-primary">
                   <value.icon className="w-8 h-8 text-primary" />
                 </div>
@@ -118,8 +88,7 @@ const About = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -173,18 +142,11 @@ const About = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-primary rounded-full" />
             
             <div className="space-y-16">
-              {timeline.map((item, index) => (
-                <div
-                  key={item.year}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } animate-fade-scale`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+              {timeline.map((item, index) => <div key={item.year} className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-fade-scale`} style={{
+              animationDelay: `${index * 0.2}s`
+            }}>
                   <div className="flex-1 px-8">
-                    <div className={`glass p-6 rounded-2xl ${
-                      index % 2 === 0 ? "text-right" : "text-left"
-                    }`}>
+                    <div className={`glass p-6 rounded-2xl ${index % 2 === 0 ? "text-right" : "text-left"}`}>
                       <div className="text-2xl font-orbitron font-bold text-primary mb-2">
                         {item.year}
                       </div>
@@ -198,8 +160,7 @@ const About = () => {
                   </div>
                   
                   <div className="flex-1 px-8" />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -218,12 +179,9 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={member.name}
-                className="text-center space-y-6 glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {team.map((member, index) => <div key={member.name} className="text-center space-y-6 glass p-8 rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="relative mx-auto">
                   <div className="w-24 h-24 mx-auto rounded-full bg-gradient-primary flex items-center justify-center text-white text-2xl font-bold glow-primary">
                     {member.initial}
@@ -238,8 +196,7 @@ const About = () => {
                   <div className="text-primary font-medium">{member.role}</div>
                   <div className="text-sm text-muted-foreground">{member.specialty}</div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -256,26 +213,19 @@ const About = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <FuturisticButton 
-              variant="primary" 
-              size="lg" 
-              glow
-              onClick={() => {
-                const phoneNumber = "5564999341815";
-                const message = "Olá! Gostaria de entrar em contato com a equipe da Codify.";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                window.open(whatsappUrl, '_blank');
-              }}
-            >
+            <FuturisticButton variant="primary" size="lg" glow onClick={() => {
+            const phoneNumber = "5564999341815";
+            const message = "Olá! Gostaria de entrar em contato com a equipe da Codify.";
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+          }}>
               <Users className="w-5 h-5" />
               Fale Conosco
             </FuturisticButton>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
