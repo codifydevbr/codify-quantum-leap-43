@@ -97,10 +97,7 @@ const Portfolio = () => {
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">Portfólio de Projetos</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
-            Explore nossa coleção de projetos inovadores que demonstram 
-            nossa expertise em tecnologias futuristas.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">Explore nossa coleção de projetos inovadores que demonstram nossa expertise em tecnologias futuristas Codify.</p>
         </div>
       </section>
 
