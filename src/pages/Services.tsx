@@ -13,6 +13,7 @@ import {
 import FuturisticButton from "@/components/FuturisticButton";
 import ProjectCaptureForm from "@/components/ProjectCaptureForm";
 import ServiceDetailModal from "@/components/ServiceDetailModal";
+import SEOHead from "@/components/SEOHead";
 
 const Services = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -290,11 +291,28 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Serviços de Desenvolvimento de Software | Codify"
+        description="Oferecemos serviços especializados em desenvolvimento web, aplicativos mobile, APIs, UX/UI design, projetos com IA e DevOps. Saiba mais!"
+        keywords="serviços de desenvolvimento de software, apps mobile, APIs personalizadas, UX/UI design, integração de sistemas, projetos IA"
+        canonicalUrl="https://codify.dev.br/servicos"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Serviços de Desenvolvimento de Software",
+          "description": "Soluções completas em desenvolvimento de software para transformar sua visão em realidade digital.",
+          "url": "https://codify.dev.br/servicos",
+          "provider": {
+            "@type": "Organization",
+            "name": "Codify"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Nossos Serviços
+            Nossos Serviços de Software Sob Medida
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Soluções completas em desenvolvimento de software para transformar 

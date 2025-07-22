@@ -1,5 +1,6 @@
 import { Users, Target, Eye, Heart, Clock, Award } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
+import SEOHead from "@/components/SEOHead";
 
 const About = () => {
   const values = [
@@ -72,11 +73,24 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Sobre a Codify | Equipe, Missão e Valores da Empresa de Software"
+        description="Conheça a história, missão e valores da Codify, empresa focada em inovação e desenvolvimento de software sob medida para seu negócio crescer."
+        keywords="empresa de desenvolvimento de software, equipe de TI, missão, visão, valores, história Codify"
+        canonicalUrl="https://codify.dev.br/sobre"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "Sobre a Codify",
+          "description": "Somos uma equipe de visionários apaixonados por tecnologia, dedicados a criar o software do futuro.",
+          "url": "https://codify.dev.br/sobre"
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Sobre a Codify
+            Conheça a Codify — Quem Somos
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Somos uma equipe de visionários apaixonados por tecnologia, 

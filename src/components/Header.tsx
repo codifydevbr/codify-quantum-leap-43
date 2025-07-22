@@ -59,7 +59,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/orcamento">
+            <Link to="/solicitar-orcamento">
               <FuturisticButton variant="primary" glow>
                 Solicitar Orçamento
               </FuturisticButton>
@@ -94,7 +94,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 border-t border-primary/20">
-                <Link to="/orcamento" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/solicitar-orcamento" onClick={() => setIsMenuOpen(false)}>
                   <FuturisticButton variant="primary" className="w-full">
                     Solicitar Orçamento
                   </FuturisticButton>

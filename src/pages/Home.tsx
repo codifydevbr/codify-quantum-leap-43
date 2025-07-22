@@ -12,6 +12,7 @@ import {
   Play
 } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
+import SEOHead from "@/components/SEOHead";
 
 const Home = () => {
   const services = [
@@ -73,6 +74,19 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Codify | Desenvolvimento de Software Personalizado e Inovador"
+        description="A Codify é uma empresa brasileira especializada em desenvolvimento de software sob demanda, aplicativos mobile, APIs e soluções digitais inovadoras. Transforme sua ideia em realidade!"
+        keywords="desenvolvimento de software, empresa de software, software sob demanda, soluções digitais, software personalizado, Codify"
+        canonicalUrl="https://codify.dev.br/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Codify - Desenvolvimento de Software Personalizado",
+          "description": "Transformamos suas ideias em soluções digitais inovadoras com tecnologia de ponta e design futurista.",
+          "url": "https://codify.dev.br/"
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Static gradient background */}
@@ -83,9 +97,7 @@ const Home = () => {
           <div className="text-center max-w-4xl mx-auto">
             <div className="space-y-8 animate-slide-up">
               <h1 className="text-5xl md:text-7xl font-orbitron font-bold leading-tight">
-                <span className="cyber-text">Software do Futuro.</span>
-                <br />
-                <span className="holographic">Hoje.</span>
+                <span className="cyber-text">Desenvolvimento de Software Personalizado para o Futuro</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
@@ -94,7 +106,7 @@ const Home = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up animate-delay-200">
-                <Link to="/orcamento">
+                <Link to="/solicitar-orcamento">
                   <FuturisticButton variant="primary" size="lg" className="animate-gentle-glow">
                     Solicitar Orçamento
                     <ArrowRight className="w-5 h-5" />
@@ -293,7 +305,7 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/orcamento">
+            <Link to="/solicitar-orcamento">
               <FuturisticButton variant="primary" size="lg" glow>
                 Começar Projeto
                 <ArrowRight className="w-5 h-5" />

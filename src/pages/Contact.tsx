@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { useToast } from "@/hooks/use-toast";
+import SEOHead from "@/components/SEOHead";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -111,11 +112,24 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contato Codify | Fale Conosco para Desenvolvimento de Software"
+        description="Entre em contato com a Codify para solicitar informações, suporte ou orçamento para seu projeto de software personalizado."
+        keywords="contato empresa software, fale conosco Codify, suporte Codify, atendimento, orçamento personalizado"
+        canonicalUrl="https://codify.dev.br/contato"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contato Codify",
+          "description": "Entre em contato conosco para transformar sua ideia em realidade digital.",
+          "url": "https://codify.dev.br/contato"
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Entre em Contato
+            Entre em Contato com a Codify
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Estamos prontos para transformar sua ideia em realidade digital. 

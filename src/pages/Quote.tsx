@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { useToast } from "@/hooks/use-toast";
+import SEOHead from "@/components/SEOHead";
 
 const Quote = () => {
   const { toast } = useToast();
@@ -184,11 +185,24 @@ const Quote = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Solicite um Orçamento para Desenvolvimento de Software | Codify"
+        description="Preencha nosso formulário para receber um orçamento personalizado para seu projeto de software sob demanda."
+        keywords="orçamento desenvolvimento software, pedido orçamento TI, orçamento personalizado, consultoria software"
+        canonicalUrl="https://codify.dev.br/solicitar-orcamento"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Solicitar Orçamento",
+          "description": "Conte-nos sobre seu projeto e receba um orçamento personalizado em até 24 horas.",
+          "url": "https://codify.dev.br/solicitar-orcamento"
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Solicitar Orçamento
+            Solicite seu Orçamento Personalizado
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Conte-nos sobre seu projeto e receba um orçamento personalizado 

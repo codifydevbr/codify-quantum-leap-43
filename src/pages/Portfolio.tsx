@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import ProjectCaptureForm from "@/components/ProjectCaptureForm";
+import SEOHead from "@/components/SEOHead";
 
 const Portfolio = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -92,11 +93,24 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Portfólio Codify | Projetos de Software Personalizado"
+        description="Veja nossos projetos e cases de sucesso em desenvolvimento de software, aplicativos e soluções digitais para diversos setores."
+        keywords="portfólio de software, projetos de desenvolvimento, cases Codify, sistemas web, apps, soluções digitais"
+        canonicalUrl="https://codify.dev.br/portfolio"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Portfólio Codify",
+          "description": "Explore nossa coleção de projetos inovadores que demonstram nossa expertise em tecnologias futuristas.",
+          "url": "https://codify.dev.br/portfolio"
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Portfólio
+            Portfólio de Projetos Codify
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Explore nossa coleção de projetos inovadores que demonstram 

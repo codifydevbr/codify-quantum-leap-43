@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -29,7 +30,8 @@ const App = () => (
           <Route path="*" element={
             <div className="min-h-screen flex flex-col">
               <Header />
-              <main className="flex-1 pt-16">
+              <Breadcrumbs />
+              <main className="flex-1">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/sobre" element={<About />} />
@@ -37,7 +39,7 @@ const App = () => (
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/contato" element={<Contact />} />
-                  <Route path="/orcamento" element={<Quote />} />
+                  <Route path="/solicitar-orcamento" element={<Quote />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>

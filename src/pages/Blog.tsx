@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Calendar, Clock, User, Tag, Search, TrendingUp } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import BlogPostModal from "@/components/BlogPostModal";
+import SEOHead from "@/components/SEOHead";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -103,11 +104,24 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Blog Codify | Notícias e Artigos sobre Desenvolvimento de Software"
+        description="Fique por dentro das novidades em tecnologia, desenvolvimento de software, transformação digital e tendências do mercado."
+        keywords="blog desenvolvimento software, novidades tecnologia, tendências TI, artigos programação, transformação digital"
+        canonicalUrl="https://codify.dev.br/blog"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Blog Codify",
+          "description": "Insights, tutoriais e tendências sobre tecnologia e desenvolvimento de software.",
+          "url": "https://codify.dev.br/blog"
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Blog Técnico
+            Blog Codify — Conteúdo para Inovar
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Insights, tutoriais e tendências sobre tecnologia e desenvolvimento 
