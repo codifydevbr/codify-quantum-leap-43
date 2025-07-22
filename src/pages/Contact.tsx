@@ -1,22 +1,12 @@
 import { useState } from "react";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  MessageCircle, 
-  Send, 
-  Clock,
-  Globe,
-  Linkedin,
-  Instagram,
-  Twitter
-} from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Send, Clock, Globe, Linkedin, Instagram, Twitter } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { useToast } from "@/hooks/use-toast";
 import SEOHead from "@/components/SEOHead";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,76 +14,65 @@ const Contact = () => {
     subject: "",
     message: ""
   });
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "E-mail",
-      content: "codifydev.principal@gmail.com",
-      description: "Resposta em até 2 horas",
-      action: "mailto:codifydev.principal@gmail.com"
-    },
-    {
-      icon: Phone,
-      title: "Telefone",
-      content: "(64) 9 9934-1815",
-      description: "Seg-Sex: 9h às 18h",
-      action: "tel:+5564999341815"
-    },
-    {
-      icon: MapPin,
-      title: "Localização",
-      content: "Goiás",
-      description: "Brasil",
-      action: "#"
-    },
-    {
-      icon: MessageCircle,
-      title: "WhatsApp",
-      content: "(64) 9 9934-1815",
-      description: "Atendimento instantâneo",
-      action: "https://wa.me/5564999341815"
-    }
-  ];
-
-  const socialLinks = [
-    { 
-      icon: Linkedin, 
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/codify-dev/",
-      color: "from-blue-600 to-blue-400"
-    },
-    { 
-      icon: Instagram, 
-      name: "Instagram",
-      url: "https://www.instagram.com/codify.dev.br/",
-      color: "from-pink-600 to-purple-400"
-    },
-    { 
-      icon: Twitter, 
-      name: "Twitter",
-      url: "#",
-      color: "from-blue-400 to-cyan-400"
-    },
-    { 
-      icon: Globe, 
-      name: "Website",
-      url: "https://github.com/codifydevbr",
-      color: "from-green-400 to-blue-500"
-    }
-  ];
-
+  const contactInfo = [{
+    icon: Mail,
+    title: "E-mail",
+    content: "codifydev.principal@gmail.com",
+    description: "Resposta em até 2 horas",
+    action: "mailto:codifydev.principal@gmail.com"
+  }, {
+    icon: Phone,
+    title: "Telefone",
+    content: "(64) 9 9934-1815",
+    description: "Seg-Sex: 9h às 18h",
+    action: "tel:+5564999341815"
+  }, {
+    icon: MapPin,
+    title: "Localização",
+    content: "Goiás",
+    description: "Brasil",
+    action: "#"
+  }, {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    content: "(64) 9 9934-1815",
+    description: "Atendimento instantâneo",
+    action: "https://wa.me/5564999341815"
+  }];
+  const socialLinks = [{
+    icon: Linkedin,
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/codify-dev/",
+    color: "from-blue-600 to-blue-400"
+  }, {
+    icon: Instagram,
+    name: "Instagram",
+    url: "https://www.instagram.com/codify.dev.br/",
+    color: "from-pink-600 to-purple-400"
+  }, {
+    icon: Twitter,
+    name: "Twitter",
+    url: "#",
+    color: "from-blue-400 to-cyan-400"
+  }, {
+    icon: Globe,
+    name: "Website",
+    url: "https://github.com/codifydevbr",
+    color: "from-green-400 to-blue-500"
+  }];
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simulação de envio
     toast({
       title: "Mensagem enviada com sucesso!",
@@ -109,28 +88,18 @@ const Contact = () => {
       message: ""
     });
   };
-
-  return (
-    <div className="min-h-screen">
-      <SEOHead
-        title="Contato Codify | Fale Conosco para Desenvolvimento de Software"
-        description="Entre em contato com a Codify para solicitar informações, suporte ou orçamento para seu projeto de software personalizado."
-        keywords="contato empresa software, fale conosco Codify, suporte Codify, atendimento, orçamento personalizado"
-        canonicalUrl="https://codify.dev.br/contato"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Contato Codify",
-          "description": "Entre em contato conosco para transformar sua ideia em realidade digital.",
-          "url": "https://codify.dev.br/contato"
-        }}
-      />
+  return <div className="min-h-screen">
+      <SEOHead title="Contato Codify | Fale Conosco para Desenvolvimento de Software" description="Entre em contato com a Codify para solicitar informações, suporte ou orçamento para seu projeto de software personalizado." keywords="contato empresa software, fale conosco Codify, suporte Codify, atendimento, orçamento personalizado" canonicalUrl="https://codify.dev.br/contato" schema={{
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contato Codify",
+      "description": "Entre em contato conosco para transformar sua ideia em realidade digital.",
+      "url": "https://codify.dev.br/contato"
+    }} />
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">
-            Entre em Contato com a Codify
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-orbitron font-bold mb-8 holographic animate-slide-up">Entre em Contato</h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
             Estamos prontos para transformar sua ideia em realidade digital. 
             Vamos conversar sobre seu próximo projeto!
@@ -142,13 +111,9 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <a
-                key={info.title}
-                href={info.action}
-                className="group glass p-8 rounded-2xl text-center hover:scale-105 transition-all duration-500 animate-fade-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {contactInfo.map((info, index) => <a key={info.title} href={info.action} className="group glass p-8 rounded-2xl text-center hover:scale-105 transition-all duration-500 animate-fade-scale" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="w-16 h-16 mx-auto rounded-full glass flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
                   <info.icon className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
                 </div>
@@ -164,8 +129,7 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground">
                   {info.description}
                 </p>
-              </a>
-            ))}
+              </a>)}
           </div>
         </div>
       </section>
@@ -191,32 +155,14 @@ const Contact = () => {
                     <label htmlFor="name" className="text-sm font-medium text-foreground">
                       Nome Completo *
                     </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300"
-                      placeholder="Seu nome completo"
-                    />
+                    <input id="name" name="name" type="text" required value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="Seu nome completo" />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-foreground">
                       E-mail *
                     </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300"
-                      placeholder="seu@email.com"
-                    />
+                    <input id="email" name="email" type="email" required value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="seu@email.com" />
                   </div>
                 </div>
 
@@ -225,31 +171,14 @@ const Contact = () => {
                     <label htmlFor="phone" className="text-sm font-medium text-foreground">
                       Telefone
                     </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300"
-                      placeholder="(11) 99999-9999"
-                    />
+                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="(11) 99999-9999" />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium text-foreground">
                       Assunto *
                     </label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300"
-                      placeholder="Sobre o que você gostaria de falar?"
-                    />
+                    <input id="subject" name="subject" type="text" required value={formData.subject} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="Sobre o que você gostaria de falar?" />
                   </div>
                 </div>
 
@@ -257,25 +186,10 @@ const Contact = () => {
                   <label htmlFor="message" className="text-sm font-medium text-foreground">
                     Mensagem *
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground resize-none transition-all duration-300"
-                    placeholder="Conte-nos mais sobre seu projeto ou dúvida..."
-                  />
+                  <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground resize-none transition-all duration-300" placeholder="Conte-nos mais sobre seu projeto ou dúvida..." />
                 </div>
 
-                <FuturisticButton 
-                  type="submit" 
-                  variant="primary" 
-                  size="lg" 
-                  className="w-full" 
-                  glow
-                >
+                <FuturisticButton type="submit" variant="primary" size="lg" className="w-full" glow>
                   <Send className="w-5 h-5" />
                   Enviar
                 </FuturisticButton>
@@ -295,13 +209,9 @@ const Contact = () => {
 
                 {/* Social Links */}
                 <div className="grid grid-cols-2 gap-4 mb-12">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      className={`group p-6 glass rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
+                  {socialLinks.map((social, index) => <a key={social.name} href={social.url} className={`group p-6 glass rounded-2xl hover:scale-105 transition-all duration-500 animate-fade-scale`} style={{
+                  animationDelay: `${index * 0.1}s`
+                }}>
                       <div className="flex items-center space-x-4">
                         <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                           <social.icon className="w-6 h-6 text-white" />
@@ -310,8 +220,7 @@ const Contact = () => {
                           {social.name}
                         </span>
                       </div>
-                    </a>
-                  ))}
+                    </a>)}
                 </div>
               </div>
 
@@ -409,16 +318,14 @@ const Contact = () => {
             {/* Decorative grid */}
             <div className="absolute inset-0 opacity-10">
               <div className="grid grid-cols-8 gap-4 h-full">
-                {Array.from({ length: 32 }).map((_, i) => (
-                  <div key={i} className="border border-primary/20" />
-                ))}
+                {Array.from({
+                length: 32
+              }).map((_, i) => <div key={i} className="border border-primary/20" />)}
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
