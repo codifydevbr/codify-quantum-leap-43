@@ -164,12 +164,12 @@
   .bg-gradient-neon {
     background: var(--gradient-neon);
     background-size: 400% 400%;
-    animation: gradient-shift 12s ease infinite;
+    animation: gradient-shift 24s ease infinite;
   }
   
   .bg-gradient-cyber {
     background: var(--gradient-cyber);
-    animation: cyber-rotate 32s linear infinite;
+    animation: cyber-rotate 60s linear infinite;
   }
   
   .bg-gradient-dark {
@@ -202,7 +202,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: hologram-shift 16s ease-in-out infinite;
+    animation: hologram-shift 30s ease-in-out infinite;
   }
   
   .cyber-text {
@@ -217,7 +217,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: cyber-glitch 12s ease-in-out infinite alternate;
+    animation: cyber-glitch 25s ease-in-out infinite alternate;
     text-shadow: 
       0 0 10px hsl(262 100% 65% / 0.5),
       0 0 20px hsl(183 100% 50% / 0.3);
