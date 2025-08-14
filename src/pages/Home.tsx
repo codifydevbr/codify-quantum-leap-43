@@ -77,10 +77,7 @@ Hoje.
                   </FuturisticButton>
                 </Link>
                 
-                <FuturisticButton variant="outline" size="lg">
-                  <Play className="w-5 h-5" />
-                  Ver Demo
-                </FuturisticButton>
+                
               </div>
             </div>
           </div>
