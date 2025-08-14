@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+import { useMutation } from "@tanstack/react-query";
 import { 
   Dialog, 
   DialogContent, 
@@ -132,32 +134,70 @@ const ProjectCaptureFormComponent = ({ open, onOpenChange }: ProjectCaptureFormP
     "Flexível",
   ];
 
-  const onSubmit = async (data: ProjectCaptureForm) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simular envio dos dados
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Aqui você pode integrar com sua API ou serviço de email
-      console.log("Dados do projeto:", data);
-      
+  const submitProjectMutation = useMutation({
+    mutationFn: async (data: ProjectCaptureForm) => {
+      // Transform form data to match database schema
+      const projectLeadData = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company || null,
+        project_title: data.projectTitle,
+        project_type: data.projectType,
+        project_description: data.projectDescription,
+        features: data.features,
+        platforms: data.platforms,
+        budget: data.budget,
+        timeline: data.timeline,
+        has_existing_brand: data.hasExistingBrand,
+        additional_info: data.additionalInfo || null,
+        preferred_contact: data.preferredContact,
+        ip_address: null, // Could be populated with actual IP if needed
+        user_agent: navigator.userAgent,
+      };
+
+      const { data: insertedData, error } = await supabase
+        .from('project_leads')
+        .insert([projectLeadData])
+        .select()
+        .single();
+
+      if (error) {
+        throw error;
+      }
+
+      // Send email notification
+      try {
+        await supabase.functions.invoke('send-project-notification', {
+          body: { projectLeadId: insertedData.id }
+        });
+      } catch (emailError) {
+        console.error('Failed to send email notification:', emailError);
+        // Don't throw - we still want to show success even if email fails
+      }
+
+      return insertedData;
+    },
+    onSuccess: () => {
       toast({
         title: "Projeto Enviado com Sucesso!",
         description: "Entraremos em contato em até 24 horas para discutir seu projeto.",
       });
-      
       form.reset();
       onOpenChange(false);
-    } catch (error) {
+    },
+    onError: (error: any) => {
+      console.error('Error submitting project:', error);
       toast({
         title: "Erro ao Enviar",
         description: "Tente novamente ou entre em contato diretamente pelo WhatsApp.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
-    }
+    },
+  });
+
+  const onSubmit = async (data: ProjectCaptureForm) => {
+    submitProjectMutation.mutate(data);
   };
 
   return (
