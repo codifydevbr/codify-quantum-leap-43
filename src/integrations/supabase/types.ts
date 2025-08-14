@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.3 (519615d)"
@@ -252,6 +252,50 @@ export type Database = {
         }
         Relationships: []
       }
+      email_notifications: {
+        Row: {
+          created_at: string
+          error_message: string | null
+          id: string
+          project_lead_id: string | null
+          recipient_email: string
+          sent_at: string | null
+          status: string
+          subject: string
+          template_name: string
+        }
+        Insert: {
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          project_lead_id?: string | null
+          recipient_email: string
+          sent_at?: string | null
+          status?: string
+          subject: string
+          template_name: string
+        }
+        Update: {
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          project_lead_id?: string | null
+          recipient_email?: string
+          sent_at?: string | null
+          status?: string
+          subject?: string
+          template_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_notifications_project_lead_id_fkey"
+            columns: ["project_lead_id"]
+            isOneToOne: false
+            referencedRelation: "project_leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       portfolio_projects: {
         Row: {
           active: boolean | null
@@ -344,6 +388,84 @@ export type Database = {
           order_index?: number | null
           slug?: string
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      project_leads: {
+        Row: {
+          additional_info: string | null
+          assigned_to: string | null
+          budget: string
+          company: string | null
+          created_at: string
+          email: string
+          features: Json | null
+          has_existing_brand: string
+          id: string
+          ip_address: unknown | null
+          name: string
+          phone: string
+          platforms: Json | null
+          preferred_contact: string
+          priority: string
+          project_description: string
+          project_title: string
+          project_type: string
+          source: string | null
+          status: string
+          timeline: string
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          additional_info?: string | null
+          assigned_to?: string | null
+          budget: string
+          company?: string | null
+          created_at?: string
+          email: string
+          features?: Json | null
+          has_existing_brand: string
+          id?: string
+          ip_address?: unknown | null
+          name: string
+          phone: string
+          platforms?: Json | null
+          preferred_contact: string
+          priority?: string
+          project_description: string
+          project_title: string
+          project_type: string
+          source?: string | null
+          status?: string
+          timeline: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          additional_info?: string | null
+          assigned_to?: string | null
+          budget?: string
+          company?: string | null
+          created_at?: string
+          email?: string
+          features?: Json | null
+          has_existing_brand?: string
+          id?: string
+          ip_address?: unknown | null
+          name?: string
+          phone?: string
+          platforms?: Json | null
+          preferred_contact?: string
+          priority?: string
+          project_description?: string
+          project_title?: string
+          project_type?: string
+          source?: string | null
+          status?: string
+          timeline?: string
+          updated_at?: string
+          user_agent?: string | null
         }
         Relationships: []
       }
