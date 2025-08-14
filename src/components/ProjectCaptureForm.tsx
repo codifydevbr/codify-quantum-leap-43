@@ -69,7 +69,6 @@ interface ProjectCaptureFormProps {
 }
 
 const ProjectCaptureFormComponent = ({ open, onOpenChange }: ProjectCaptureFormProps) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ProjectCaptureForm>({
     resolver: zodResolver(projectCaptureSchema),
@@ -562,10 +561,10 @@ const ProjectCaptureFormComponent = ({ open, onOpenChange }: ProjectCaptureFormP
               
               <Button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={submitProjectMutation.isPending}
                 className="flex-1 bg-primary hover:bg-primary/90"
               >
-                {isSubmitting ? (
+                {submitProjectMutation.isPending ? (
                   <>Enviando...</>
                 ) : (
                   <>
