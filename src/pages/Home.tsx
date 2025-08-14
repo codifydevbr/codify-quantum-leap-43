@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, Smartphone, Cloud, Zap, Shield, Cpu, CheckCircle, Star, Play } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
-import SEOHead from "@/components/SEOHead";
+import AdvancedSEO from "@/components/AdvancedSEO";
+import { analytics } from "@/components/Analytics";
 const Home = () => {
   const services = [{
     icon: Code,
@@ -42,13 +43,30 @@ const Home = () => {
     rating: 5
   }];
   return <div className="min-h-screen">
-      <SEOHead title="Codify | Desenvolvimento de Software Personalizado e Inovador" description="A Codify é uma empresa brasileira especializada em desenvolvimento de software sob demanda, aplicativos mobile, APIs e soluções digitais inovadoras. Transforme sua ideia em realidade!" keywords="desenvolvimento de software, empresa de software, software sob demanda, soluções digitais, software personalizado, Codify" canonicalUrl="https://codify.dev.br/" schema={{
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Codify - Desenvolvimento de Software Personalizado",
-      "description": "Transformamos suas ideias em soluções digitais inovadoras com tecnologia de ponta e design futurista.",
-      "url": "https://codify.dev.br/"
-    }} />
+      <AdvancedSEO 
+        title="Codify | Desenvolvimento de Software Personalizado e Inovador" 
+        description="A Codify é uma empresa brasileira especializada em desenvolvimento de software sob demanda, aplicativos mobile, APIs e soluções digitais inovadoras. Transforme sua ideia em realidade!" 
+        keywords="desenvolvimento de software, empresa de software, software sob demanda, soluções digitais, software personalizado, Codify, desenvolvimento web, apps mobile, IA, automação"
+        canonicalUrl="https://codify.dev.br/" 
+        priority={1.0}
+        changeFreq="weekly"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Codify",
+          "description": "Transformamos suas ideias em soluções digitais inovadoras com tecnologia de ponta e design futurista.",
+          "url": "https://codify.dev.br/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://codify.dev.br/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "sameAs": [
+            "https://github.com/codifydev",
+            "https://linkedin.com/company/codifydev"
+          ]
+        }} 
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Static gradient background */}
@@ -71,7 +89,12 @@ Hoje.
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up animate-delay-200">
                 <Link to="/solicitar-orcamento">
-                  <FuturisticButton variant="primary" size="lg" className="animate-gentle-glow">
+                  <FuturisticButton 
+                    variant="primary" 
+                    size="lg" 
+                    className="animate-gentle-glow"
+                    onClick={() => analytics.trackClick('hero_cta', { section: 'hero', action: 'solicitar_orcamento' })}
+                  >
                     Solicitar Orçamento
                     <ArrowRight className="w-5 h-5" />
                   </FuturisticButton>

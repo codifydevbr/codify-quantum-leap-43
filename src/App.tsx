@@ -7,50 +7,53 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import Quote from "./pages/Quote";
+import AnalyticsTracker from "@/components/Analytics";
+import PerformanceMonitor from "@/components/PerformanceMonitor";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import SEOOptimizer from "@/components/SEOOptimizer";
+import { PageComponents } from "@/components/LoadingOptimizer";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/admin" element={<Admin />} />
-          <Route path="*" element={
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <Breadcrumbs />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/sobre" element={<About />} />
-                  <Route path="/servicos" element={<Services />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/contato" element={<Contact />} />
-                  <Route path="/solicitar-orcamento" element={<Quote />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-              <WhatsAppButton />
-            </div>
-          } />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <SEOOptimizer />
+          <AnalyticsTracker />
+          <PerformanceMonitor />
+          <Routes>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="*" element={
+              <div className="min-h-screen flex flex-col">
+                <Header />
+                <Breadcrumbs />
+                <main className="flex-1">
+                  <Routes>
+                    <Route path="/" element={<PageComponents.Home />} />
+                    <Route path="/sobre" element={<PageComponents.About />} />
+                    <Route path="/servicos" element={<PageComponents.Services />} />
+                    <Route path="/portfolio" element={<PageComponents.Portfolio />} />
+                    <Route path="/blog" element={<PageComponents.Blog />} />
+                    <Route path="/contato" element={<PageComponents.Contact />} />
+                    <Route path="/solicitar-orcamento" element={<PageComponents.Quote />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <Footer />
+                <WhatsAppButton />
+              </div>
+            } />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;
