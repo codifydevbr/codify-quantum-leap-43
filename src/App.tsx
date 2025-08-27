@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "@/components/Header";
 import EnhancedFooter from "@/components/EnhancedFooter";
 import FloatingActionButton from "@/components/FloatingActionButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AnalyticsTracker from "@/components/Analytics";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
@@ -46,7 +47,8 @@ const App = () => (
                   </Routes>
                 </main>
                 <EnhancedFooter />
-                <FloatingActionButton />
+        <FloatingActionButton />
+        <WhatsAppButton />
               </div>
             } />
           </Routes>
