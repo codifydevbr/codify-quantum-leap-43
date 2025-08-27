@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Code, Smartphone, Cloud, Zap, Shield, Cpu, CheckCircle, Star, Play } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import AdvancedSEO from "@/components/AdvancedSEO";
+import EnhancedHero from "@/components/EnhancedHero";
+import InteractiveServices from "@/components/InteractiveServices";
+import TechStack from "@/components/TechStack";
+import ProcessTimeline from "@/components/ProcessTimeline";
+import CounterStats from "@/components/CounterStats";
 import { analytics } from "@/components/Analytics";
 const Home = () => {
   const services = [{
@@ -67,114 +72,21 @@ const Home = () => {
           ]
         }} 
       />
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Static gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="space-y-8 animate-slide-up">
-              <h1 className="text-5xl md:text-7xl font-orbitron font-bold leading-tight">
-                <span className="cyber-text">Software do Futuro,
-Hoje.
-              </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-slide-up animate-delay-100">
-                Transformamos suas ideias em soluções digitais inovadoras com 
-                tecnologia de ponta e design futurista.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up animate-delay-200">
-                <Link to="/solicitar-orcamento">
-                  <FuturisticButton 
-                    variant="primary" 
-                    size="lg" 
-                    className="animate-gentle-glow"
-                    onClick={() => analytics.trackClick('hero_cta', { section: 'hero', action: 'solicitar_orcamento' })}
-                  >
-                    Solicitar Orçamento
-                    <ArrowRight className="w-5 h-5" />
-                  </FuturisticButton>
-                </Link>
-                
-                
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      {/* Enhanced Hero Section */}
+      <EnhancedHero />
 
-        {/* Animated floating elements */}
-        <div className="absolute top-20 left-10 floating-element">
-          <div className="w-20 h-20 border-2 border-primary/40 rounded-full cyber-glass animate-gentle-glow" />
-        </div>
-        <div className="absolute bottom-20 right-10 floating-element">
-          <div className="w-16 h-16 bg-gradient-primary rounded-lg rotate-45 opacity-60 animate-orbital-motion" />
-        </div>
-        <div className="absolute top-1/2 left-5 floating-element">
-          <div className="w-12 h-12 bg-gradient-secondary rounded-full opacity-70 animate-matrix-drift" />
-        </div>
-        <div className="absolute top-1/3 right-1/4 floating-element">
-          <Zap className="w-10 h-10 text-secondary opacity-80 animate-gentle-glow" />
-        </div>
-        <div className="absolute bottom-1/3 left-1/3 floating-element">
-          <div className="w-8 h-8 border border-secondary/60 rotate-45 rounded-sm opacity-60 animate-float" />
-        </div>
-        
-        {/* Additional floating particles */}
-        <div className="absolute top-10 right-20 floating-element">
-          <div className="w-6 h-6 bg-neon-cyan rounded-full opacity-50 animate-orbital-motion" style={{
-          animationDelay: '-8s'
-        }} />
-        </div>
-        <div className="absolute bottom-32 left-20 floating-element">
-          <div className="w-4 h-4 bg-primary rounded-full opacity-60 animate-matrix-drift" style={{
-          animationDelay: '-15s'
-        }} />
-        </div>
-        <div className="absolute top-2/3 right-10 floating-element">
-          <div className="w-10 h-10 border border-secondary/40 rounded-full animate-gentle-glow" style={{
-          animationDelay: '-3s'
-        }} />
-        </div>
-      </section>
+      {/* Interactive Services Section */}
+      <InteractiveServices />
 
-      {/* Services Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 cyber-text">
-              Nossos Serviços
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Soluções completas em desenvolvimento de software para impulsionar seu negócio
-            </p>
-          </div>
+      {/* Tech Stack Section */}
+      <TechStack />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group cyber-glass p-8 rounded-2xl hover-glow transition-all duration-500 cursor-pointer animate-fade-scale" style={{
-            animationDelay: service.delay
-          }}>
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 rounded-full cyber-glass flex items-center justify-center group-hover:glow-intense transition-all duration-500">
-                    <service.icon className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                
-                <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </div>)}
-          </div>
-        </div>
-      </section>
+      {/* Counter Stats */}
+      <CounterStats />
+
+      {/* Process Timeline */}
+      <ProcessTimeline />
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-dark">

@@ -50,14 +50,17 @@
     --deep-space: 240 10% 6%;
     --metallic: 240 5% 25%;
     
-    /* Advanced gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(262 100% 65%), hsl(217 100% 60%));
-    --gradient-secondary: linear-gradient(45deg, hsl(183 100% 50%), hsl(262 100% 65%));
-    --gradient-tertiary: linear-gradient(90deg, hsl(320 100% 65%), hsl(262 100% 65%), hsl(217 100% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(240 10% 8%), hsl(240 10% 6%));
-    --gradient-glow: radial-gradient(circle, hsl(262 100% 65% / 0.15), transparent);
-    --gradient-neon: linear-gradient(45deg, hsl(262 100% 65%), hsl(183 100% 50%), hsl(320 100% 65%), hsl(120 100% 50%));
-    --gradient-cyber: conic-gradient(from 0deg, hsl(262 100% 65%), hsl(183 100% 50%), hsl(217 100% 60%), hsl(262 100% 65%));
+  /* Advanced gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(262 100% 65%), hsl(217 100% 60%));
+  --gradient-secondary: linear-gradient(45deg, hsl(183 100% 50%), hsl(262 100% 65%));
+  --gradient-tertiary: linear-gradient(90deg, hsl(320 100% 65%), hsl(262 100% 65%), hsl(217 100% 60%));
+  --gradient-dark: linear-gradient(180deg, hsl(240 10% 8%), hsl(240 10% 6%));
+  --gradient-glow: radial-gradient(circle, hsl(262 100% 65% / 0.15), transparent);
+  --gradient-neon: linear-gradient(45deg, hsl(262 100% 65%), hsl(183 100% 50%), hsl(320 100% 65%), hsl(120 100% 50%));
+  --gradient-cyber: conic-gradient(from 0deg, hsl(262 100% 65%), hsl(183 100% 50%), hsl(217 100% 60%), hsl(262 100% 65%));
+  --gradient-hero: radial-gradient(ellipse at center, hsl(262 100% 65% / 0.1), transparent 70%);
+  --gradient-mesh: linear-gradient(45deg, hsl(262 100% 65% / 0.1), transparent 30%), linear-gradient(-45deg, hsl(183 100% 50% / 0.1), transparent 30%);
+  --gradient-aurora: linear-gradient(45deg, hsl(262 100% 65% / 0.8), hsl(183 100% 50% / 0.6), hsl(320 100% 65% / 0.4));
     
     /* Enhanced shadows and glows */
     --shadow-neon: 0 0 20px hsl(262 100% 65% / 0.5), 0 0 40px hsl(262 100% 65% / 0.3), 0 0 80px hsl(262 100% 65% / 0.1);
