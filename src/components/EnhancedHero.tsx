@@ -19,10 +19,7 @@ const EnhancedHero = () => {
         <div className="text-center max-w-5xl mx-auto">
           <div className="space-y-8 animate-slide-up">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium animate-fade-scale">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Tecnologia do futuro, disponível hoje
-            </div>
+            
             
             {/* Main heading */}
             <h1 className="text-6xl md:text-8xl font-orbitron font-bold leading-tight">
