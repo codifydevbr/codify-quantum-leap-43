@@ -80,7 +80,7 @@ const EnhancedHero = () => {
         <div className="absolute top-1/2 left-5 animate-matrix-drift">
           <div className="w-12 h-12 bg-gradient-secondary rounded-full opacity-70" />
         </div>
-        <div className="absolute top-1/3 right-1/4 animate-gentle-glow">
+        <div className="absolute top-20 right-20 animate-gentle-glow">
           <Zap className="w-10 h-10 text-secondary opacity-80" />
         </div>
         
