@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Play, Sparkles, Zap } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { analytics } from "@/components/Analytics";
-
 const EnhancedHero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background"></div>
       <div className="absolute inset-0 bg-[var(--gradient-hero)]"></div>
@@ -42,23 +40,16 @@ const EnhancedHero = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up animate-delay-200">
               <Link to="/solicitar-orcamento">
-                <FuturisticButton 
-                  variant="primary" 
-                  size="lg" 
-                  className="animate-gentle-glow group"
-                  onClick={() => analytics.trackClick('hero_cta', { section: 'hero', action: 'solicitar_orcamento' })}
-                >
+                <FuturisticButton variant="primary" size="lg" className="animate-gentle-glow group" onClick={() => analytics.trackClick('hero_cta', {
+                section: 'hero',
+                action: 'solicitar_orcamento'
+              })}>
                   Iniciar Projeto
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </FuturisticButton>
               </Link>
               
-              <button className="flex items-center space-x-3 px-6 py-3 rounded-xl glass border border-primary/20 text-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                  <Play className="w-5 h-5 ml-1" />
-                </div>
-                <span className="font-medium">Ver Demo</span>
-              </button>
+              
             </div>
             
             {/* Stats */}
@@ -97,21 +88,15 @@ const EnhancedHero = () => {
         </div>
         
         {/* Additional particles */}
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 bg-primary rounded-full opacity-60 animate-particle-float`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${8 + Math.random() * 4}s`
-            }}
-          />
-        ))}
+        {Array.from({
+        length: 6
+      }).map((_, i) => <div key={i} className={`absolute w-2 h-2 bg-primary rounded-full opacity-60 animate-particle-float`} style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 10}s`,
+        animationDuration: `${8 + Math.random() * 4}s`
+      }} />)}
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default EnhancedHero;
