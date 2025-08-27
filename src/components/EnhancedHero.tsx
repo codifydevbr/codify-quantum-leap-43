@@ -24,7 +24,7 @@ const EnhancedHero = () => {
             {/* Main heading */}
             <h1 className="text-6xl md:text-8xl font-orbitron font-bold leading-tight">
               <span className="cyber-text block">Software do</span>
-              <span className="holographic block">Futuro, Hoje.</span>
+              <span className="holographic block pb-2">Futuro, Hoje.</span>
             </h1>
             
             {/* Subheading */}
