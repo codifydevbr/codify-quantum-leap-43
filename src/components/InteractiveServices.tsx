@@ -58,7 +58,7 @@ const InteractiveServices = () => {
   ];
 
   return (
-    <section className="py-12 relative">
+    <section className="py-12 relative bg-gradient-to-br from-background to-muted/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 cyber-text">
@@ -75,15 +75,15 @@ const InteractiveServices = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative overflow-hidden cyber-glass p-8 rounded-2xl hover-glow transition-all duration-500 cursor-pointer animate-fade-scale ${
-                activeService === index ? 'ring-2 ring-primary glow-primary' : ''
+              className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border border-primary/20 p-8 rounded-2xl hover:border-primary/40 hover:bg-card/70 transition-all duration-500 cursor-pointer animate-fade-in ${
+                activeService === index ? 'ring-2 ring-primary shadow-[0_0_30px_hsl(var(--primary)/0.3)]' : ''
               }`}
               style={{ animationDelay: service.delay }}
               onMouseEnter={() => setActiveService(index)}
             >
               {/* Service icon */}
               <div className="relative mb-6">
-                <div className="w-16 h-16 rounded-full cyber-glass flex items-center justify-center group-hover:glow-intense transition-all duration-500">
+                <div className="w-16 h-16 rounded-full bg-card/80 border border-primary/30 flex items-center justify-center group-hover:border-primary/60 group-hover:bg-card transition-all duration-500">
                   <service.icon className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
                 </div>
                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
