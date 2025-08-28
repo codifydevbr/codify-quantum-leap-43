@@ -47,7 +47,7 @@ const ProcessTimeline = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-12 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 cyber-text">
@@ -60,11 +60,12 @@ const ProcessTimeline = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
+          {/* Enhanced Timeline line with animated dots */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-primary opacity-30 hidden lg:block" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-primary opacity-50 hidden lg:block animate-pulse" />
           
           {/* Steps */}
-          <div className="space-y-12 lg:space-y-16">
+          <div className="space-y-8 lg:space-y-12">
             {steps.map((step, index) => (
               <div
                 key={step.title}
@@ -76,10 +77,10 @@ const ProcessTimeline = () => {
                 <div className={`flex-1 max-w-lg ${
                   index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'
                 }`}>
-                  <div className="cyber-glass p-8 rounded-2xl hover-glow transition-all duration-500 group animate-fade-scale"
-                       style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="cyber-glass p-6 rounded-2xl hover-glow transition-all duration-500 group animate-fade-scale border border-primary/20 hover:border-primary/40"
+                       style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white">
+                      <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center text-white animate-gentle-glow">
                         <step.icon className="w-6 h-6" />
                       </div>
                       <div>
@@ -108,11 +109,17 @@ const ProcessTimeline = () => {
                   </div>
                 </div>
 
-                {/* Timeline node */}
+                {/* Enhanced Timeline node */}
                 <div className="hidden lg:flex relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-white glow-primary">
-                    <span className="font-orbitron font-bold text-lg">{index + 1}</span>
+                  <div className="w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center text-white glow-primary animate-gentle-glow border-4 border-background">
+                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                      <span className="font-orbitron font-bold text-lg">{index + 1}</span>
+                    </div>
                   </div>
+                  {/* Connecting lines */}
+                  {index < steps.length - 1 && (
+                    <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-gradient-primary opacity-50" />
+                  )}
                 </div>
 
                 {/* Spacer for alternating layout */}
