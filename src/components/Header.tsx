@@ -37,12 +37,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                className={`relative px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                   isActive(item.path)
                     ? "text-primary"
                     : "text-foreground hover:text-primary"
@@ -60,8 +60,9 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link to="/solicitar-orcamento">
-              <FuturisticButton variant="primary" glow>
-                Solicitar Orçamento
+              <FuturisticButton variant="primary" glow className="text-xs lg:text-sm px-3 lg:px-4">
+                <span className="hidden lg:inline">Solicitar Orçamento</span>
+                <span className="lg:hidden">Orçamento</span>
               </FuturisticButton>
             </Link>
           </div>
