@@ -89,7 +89,7 @@ const Home = () => {
       <ProcessTimeline />
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-12 bg-gradient-dark">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -143,7 +143,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 holographic">
@@ -181,7 +181,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-dark relative overflow-hidden">
+      <section className="py-12 bg-gradient-dark relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 holographic">
             Pronto para o futuro?

@@ -3,7 +3,7 @@ import { ArrowRight, Play, Sparkles, Zap } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { analytics } from "@/components/Analytics";
 const EnhancedHero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background"></div>
       <div className="absolute inset-0 bg-[var(--gradient-hero)]"></div>
