@@ -65,7 +65,7 @@ const CounterStats = () => {
     label: "Prêmios e Reconhecimentos",
     description: "Qualidade reconhecida no mercado"
   }];
-  return <section className="py-20 bg-gradient-dark relative overflow-hidden">
+  return <section className="py-12 bg-gradient-dark relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6 holographic">
