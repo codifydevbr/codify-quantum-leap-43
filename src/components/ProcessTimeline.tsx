@@ -117,7 +117,7 @@ const ProcessTimeline = () => {
         </div>
 
         {/* Desktop Timeline */}
-        <div className="hidden md:block relative h-[800px]">
+        <div className="hidden md:block relative h-[900px]">
           {/* SVG Lines */}
           <svg className="absolute inset-0 w-full h-full z-0" preserveAspectRatio="none">
             <defs>
@@ -129,43 +129,35 @@ const ProcessTimeline = () => {
             </defs>
             
             {/* Connecting lines between steps */}
-            {steps.slice(0, -1).map((step, index) => {
-              const nextStep = steps[index + 1];
-              const x1 = step.position.desktop.right ? `${100 - parseInt(step.position.desktop.right)}%` : 
-                         step.position.desktop.left ? `${parseInt(step.position.desktop.left)}%` : '50%';
-              const y1 = step.position.desktop.top ? `${parseInt(step.position.desktop.top)}%` : 
-                         step.position.desktop.bottom ? `${100 - parseInt(step.position.desktop.bottom)}%` : '50%';
-              const x2 = nextStep.position.desktop.right ? `${100 - parseInt(nextStep.position.desktop.right)}%` : 
-                         nextStep.position.desktop.left ? `${parseInt(nextStep.position.desktop.left)}%` : '50%';
-              const y2 = nextStep.position.desktop.top ? `${parseInt(nextStep.position.desktop.top)}%` : 
-                         nextStep.position.desktop.bottom ? `${100 - parseInt(nextStep.position.desktop.bottom)}%` : '50%';
-              
-              return (
-                <line
-                  key={index}
-                  x1={x1}
-                  y1={y1}
-                  x2={x2}
-                  y2={y2}
-                  stroke="url(#lineGradient)"
-                  strokeWidth="3"
-                  strokeDasharray="5,5"
-                  className="animate-pulse"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                />
-              );
-            })}
+            <path
+              d="M 75% 8% Q 50% 15% 25% 22% Q 50% 29% 75% 36% Q 50% 43% 25% 50% Q 50% 57% 75% 64% Q 50% 71% 25% 78%"
+              stroke="url(#lineGradient)"
+              strokeWidth="3"
+              strokeDasharray="8,4"
+              fill="none"
+              className="animate-pulse"
+            />
           </svg>
 
           {/* Step Cards */}
           {steps.map((step, index) => {
             const IconComponent = step.icon;
+            // Organized positioning: alternating sides in a zigzag pattern
+            const positions = [
+              { top: '5%', right: '8%' },   // 1. Top right
+              { top: '18%', left: '8%' },   // 2. Mid-high left
+              { top: '31%', right: '8%' },  // 3. Mid right
+              { top: '44%', left: '8%' },   // 4. Mid-low left
+              { top: '57%', right: '8%' },  // 5. Bottom-mid right
+              { top: '70%', left: '8%' }    // 6. Bottom left
+            ];
+            
             return (
               <div
                 key={step.title}
                 className="absolute group animate-fade-in"
                 style={{
-                  ...step.position.desktop,
+                  ...positions[index],
                   animationDelay: `${index * 0.2}s`,
                   width: '280px'
                 }}
