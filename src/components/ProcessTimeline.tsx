@@ -116,40 +116,54 @@ const ProcessTimeline = () => {
           })}
         </div>
 
-        {/* Desktop Timeline */}
-        <div className="hidden md:block relative h-[900px]">
-          {/* SVG Lines */}
+        {/* Desktop Flowchart */}
+        <div className="hidden md:block relative h-[600px]">
+          {/* SVG Arrows for flowchart connections */}
           <svg className="absolute inset-0 w-full h-full z-0" preserveAspectRatio="none">
             <defs>
-              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="hsl(var(--secondary))" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" stopOpacity="0.8" />
               </linearGradient>
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                      refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="hsl(var(--primary))" />
+              </marker>
             </defs>
             
-            {/* Connecting lines between steps */}
-            <path
-              d="M 75% 8% Q 50% 15% 25% 22% Q 50% 29% 75% 36% Q 50% 43% 25% 50% Q 50% 57% 75% 64% Q 50% 71% 25% 78%"
-              stroke="url(#lineGradient)"
-              strokeWidth="3"
-              strokeDasharray="8,4"
-              fill="none"
-              className="animate-pulse"
-            />
+            {/* Flowchart connections */}
+            {/* 1 to 2 */}
+            <path d="M 30% 15% L 45% 15%" stroke="url(#flowGradient)" strokeWidth="3" 
+                  markerEnd="url(#arrowhead)" className="animate-pulse" style={{animationDelay: '0.5s'}} />
+            
+            {/* 2 to 3 */}
+            <path d="M 70% 15% L 70% 35%" stroke="url(#flowGradient)" strokeWidth="3" 
+                  markerEnd="url(#arrowhead)" className="animate-pulse" style={{animationDelay: '1s'}} />
+            
+            {/* 3 to 4 */}
+            <path d="M 45% 50% L 30% 50%" stroke="url(#flowGradient)" strokeWidth="3" 
+                  markerEnd="url(#arrowhead)" className="animate-pulse" style={{animationDelay: '1.5s'}} />
+            
+            {/* 4 to 5 */}
+            <path d="M 30% 65% L 30% 85%" stroke="url(#flowGradient)" strokeWidth="3" 
+                  markerEnd="url(#arrowhead)" className="animate-pulse" style={{animationDelay: '2s'}} />
+            
+            {/* 5 to 6 */}
+            <path d="M 45% 85% L 60% 85%" stroke="url(#flowGradient)" strokeWidth="3" 
+                  markerEnd="url(#arrowhead)" className="animate-pulse" style={{animationDelay: '2.5s'}} />
           </svg>
 
-          {/* Step Cards */}
+          {/* Flowchart Cards */}
           {steps.map((step, index) => {
             const IconComponent = step.icon;
-            // Organized positioning: alternating sides in a zigzag pattern
+            // Flowchart positioning: structured grid layout
             const positions = [
-              { top: '5%', right: '8%' },   // 1. Top right
-              { top: '18%', left: '8%' },   // 2. Mid-high left
-              { top: '31%', right: '8%' },  // 3. Mid right
-              { top: '44%', left: '8%' },   // 4. Mid-low left
-              { top: '57%', right: '8%' },  // 5. Bottom-mid right
-              { top: '70%', left: '8%' }    // 6. Bottom left
+              { top: '5%', left: '5%' },     // 1. Ideação (top-left)
+              { top: '5%', left: '50%' },    // 2. Design (top-right) 
+              { top: '40%', left: '50%' },   // 3. Desenvolvimento (mid-right)
+              { top: '40%', left: '5%' },    // 4. Testes (mid-left)
+              { top: '75%', left: '5%' },    // 5. Deploy (bottom-left)
+              { top: '75%', left: '50%' }    // 6. Suporte (bottom-right)
             ];
             
             return (
@@ -158,7 +172,7 @@ const ProcessTimeline = () => {
                 className="absolute group animate-fade-in"
                 style={{
                   ...positions[index],
-                  animationDelay: `${index * 0.2}s`,
+                  animationDelay: `${index * 0.3}s`,
                   width: '280px'
                 }}
               >
