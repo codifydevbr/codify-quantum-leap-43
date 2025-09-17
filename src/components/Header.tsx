@@ -19,7 +19,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-primary/20">
+    <header className="fixed top-0 left-0 right-0 z-50 liquid-glass-nav border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -78,7 +78,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 glass border-t border-primary/20 animate-fade-scale">
+          <div className="md:hidden absolute top-16 left-0 right-0 liquid-glass border-t border-primary/20 animate-fade-scale">
             <nav className="container mx-auto px-4 py-4 space-y-4">
               {navItems.map((item) => (
                 <Link

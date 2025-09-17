@@ -93,7 +93,7 @@ const ProcessTimeline = () => {
                 {phase.steps.map((step, stepIndex) => {
                   const IconComponent = step.icon;
                   return (
-                    <div key={step.title} className="flex items-center space-x-4 p-4 bg-card/50 backdrop-blur-sm rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div key={step.title} className="flex items-center space-x-4 p-4 liquid-glass-card backdrop-blur-sm rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${phase.color} p-3 flex-shrink-0`}>
                         <IconComponent className="w-full h-full text-white" />
                       </div>
@@ -132,7 +132,7 @@ const ProcessTimeline = () => {
                 </div>
 
                 {/* Phase Content */}
-                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 group-hover:-translate-y-2">
+                <div className="liquid-glass-card backdrop-blur-sm rounded-2xl p-6 border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 group-hover:-translate-y-2">
                   <div className="text-center mb-6">
                     <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {phase.title}

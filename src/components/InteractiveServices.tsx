@@ -65,7 +65,7 @@ const InteractiveServices = () => {
             return (
               <div
                 key={service.title}
-                className={`group relative bg-card border border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all duration-500 hover:scale-105 animate-fade-in ${
+                className={`group relative liquid-glass-card border border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all duration-500 hover:scale-105 animate-fade-in ${
                   activeService === index ? 'ring-2 ring-primary' : ''
                 }`}
                 style={{ animationDelay: service.delay }}

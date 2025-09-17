@@ -58,7 +58,7 @@ const EnhancedFooter = () => {
     href: "#",
     label: "Twitter"
   }];
-  return <footer className="relative bg-gradient-dark border-t border-primary/20 mt-20 overflow-hidden">
+  return <footer className="relative liquid-glass-footer border-t border-primary/20 mt-20 overflow-hidden">
       {/* Newsletter section */}
       <div className="container mx-auto px-4 py-12 border-b border-primary/20">
         <div className="max-w-4xl mx-auto text-center">
@@ -69,7 +69,7 @@ const EnhancedFooter = () => {
             Receba insights sobre tecnologia, dicas de desenvolvimento e novidades da Codify
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" placeholder="Seu melhor email" className="flex-1 px-4 py-3 rounded-xl cyber-glass border border-primary/20 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors" />
+            <input type="email" placeholder="Seu melhor email" className="flex-1 px-4 py-3 rounded-xl liquid-glass border border-primary/20 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors" />
             <FuturisticButton variant="primary">
               Inscrever-se
               <ArrowRight className="w-4 h-4" />
@@ -117,7 +117,7 @@ const EnhancedFooter = () => {
               icon: Icon,
               href,
               label
-            }) => <a key={label} href={href} className="p-3 rounded-lg cyber-glass border border-primary/20 text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-primary transition-all duration-300 group" aria-label={label}>
+            }) => <a key={label} href={href} className="p-3 rounded-lg liquid-glass border border-primary/20 text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-primary transition-all duration-300 group" aria-label={label}>
                   <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>)}
             </div>

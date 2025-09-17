@@ -3,7 +3,7 @@ import { ArrowRight, Play, Sparkles, Zap } from "lucide-react";
 import FuturisticButton from "@/components/FuturisticButton";
 import { analytics } from "@/components/Analytics";
 const EnhancedHero = () => {
-  return <section className="relative h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative h-screen flex items-center justify-center overflow-hidden liquid-glass-hero">
       {/* Enhanced background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background"></div>
       <div className="absolute inset-0 bg-[var(--gradient-hero)]"></div>
@@ -72,7 +72,7 @@ const EnhancedHero = () => {
       <div className="absolute inset-0 pointer-events-none">
         {/* Main floating elements */}
         <div className="absolute top-20 left-10 animate-float">
-          <div className="w-20 h-20 border-2 border-primary/40 rounded-full cyber-glass animate-gentle-glow" />
+          <div className="w-20 h-20 border-2 border-primary/40 rounded-full liquid-glass animate-gentle-glow" />
         </div>
         <div className="absolute bottom-20 right-10 animate-orbital-motion">
           <div className="w-16 h-16 bg-gradient-primary rounded-lg rotate-45 opacity-60" />

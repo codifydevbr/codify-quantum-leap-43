@@ -20,10 +20,10 @@ const FuturisticButton = ({
   const baseClasses = "btn-futuristic relative overflow-hidden font-space font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap inline-flex items-center justify-center gap-2";
   
   const variantClasses = {
-    primary: "bg-gradient-primary text-white border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-primary/50",
-    secondary: "glass border-2 border-secondary/50 text-white hover:border-secondary hover:bg-secondary/10 hover:shadow-secondary/30",
-    ghost: "bg-transparent hover:glass text-foreground hover:text-primary border border-border hover:border-primary/50",
-    outline: "border-2 border-primary/50 text-white hover:bg-primary/10 hover:border-primary hover:shadow-primary/30 bg-primary/5"
+    primary: "liquid-glass-button text-white border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-primary/50",
+    secondary: "liquid-glass border-2 border-secondary/50 text-white hover:border-secondary hover:bg-secondary/10 hover:shadow-secondary/30",
+    ghost: "bg-transparent hover:liquid-glass text-foreground hover:text-primary border border-border hover:border-primary/50",
+    outline: "border-2 border-primary/50 text-white liquid-glass hover:border-primary hover:shadow-primary/30"
   };
   
   const sizeClasses = {
