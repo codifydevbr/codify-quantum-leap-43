@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lightbulb, PenTool, Code2, Rocket, Settings, CheckCircle, ArrowRight, Clock, Users } from 'lucide-react';
+import { Lightbulb, PenTool, Code2, Rocket, Settings, CheckCircle, ArrowRight, Users } from 'lucide-react';
 
 const ProcessTimeline = () => {
   const phases = [
@@ -7,7 +7,6 @@ const ProcessTimeline = () => {
       phase: "01",
       title: "Descoberta",
       subtitle: "Entendendo sua visão",
-      duration: "1-2 dias",
       color: "from-blue-500 to-cyan-500",
       steps: [
         { icon: Lightbulb, title: "Briefing", desc: "Reunião inicial para entender objetivos" },
@@ -19,7 +18,6 @@ const ProcessTimeline = () => {
       phase: "02", 
       title: "Criação",
       subtitle: "Design & Prototipagem",
-      duration: "3-5 dias",
       color: "from-purple-500 to-pink-500",
       steps: [
         { icon: PenTool, title: "Wireframes", desc: "Estrutura e arquitetura da informação" },
@@ -31,7 +29,6 @@ const ProcessTimeline = () => {
       phase: "03",
       title: "Desenvolvimento", 
       subtitle: "Construção da solução",
-      duration: "2-4 semanas",
       color: "from-green-500 to-emerald-500",
       steps: [
         { icon: Code2, title: "Frontend", desc: "Interface de usuário responsiva" },
@@ -43,7 +40,6 @@ const ProcessTimeline = () => {
       phase: "04",
       title: "Entrega",
       subtitle: "Deploy & Suporte", 
-      duration: "Contínuo",
       color: "from-orange-500 to-red-500",
       steps: [
         { icon: Settings, title: "Testes", desc: "Garantia de qualidade total" },
@@ -82,10 +78,6 @@ const ProcessTimeline = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">{phase.title}</h3>
                 <p className="text-muted-foreground mb-2">{phase.subtitle}</p>
-                <div className="flex items-center justify-center space-x-2 text-sm text-secondary">
-                  <Clock className="w-4 h-4" />
-                  <span>{phase.duration}</span>
-                </div>
               </div>
 
               {/* Steps */}
@@ -138,10 +130,6 @@ const ProcessTimeline = () => {
                       {phase.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-3">{phase.subtitle}</p>
-                    <div className="flex items-center justify-center space-x-2 text-xs text-secondary">
-                      <Clock className="w-3 h-3" />
-                      <span>{phase.duration}</span>
-                    </div>
                   </div>
 
                   {/* Steps List */}
