@@ -262,7 +262,7 @@ const Services = () => {
             </FuturisticButton>
             
             <FuturisticButton variant="outline" size="lg" onClick={() => {
-            const phoneNumber = "5564999341815";
+            const phoneNumber = "5564998904033";
             const message = "Olá! Gostaria de falar com um especialista sobre os serviços da Codify.";
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -23,9 +23,9 @@ const Contact = () => {
   }, {
     icon: Phone,
     title: "Telefone",
-    content: "(64) 9 9934-1815",
+    content: "(64) 9 9890-403",
     description: "Seg-Sex: 9h às 18h",
-    action: "tel:+5564999341815"
+    action: "tel:+5564998904033"
   }, {
     icon: MapPin,
     title: "Localização",
@@ -35,9 +35,9 @@ const Contact = () => {
   }, {
     icon: MessageCircle,
     title: "WhatsApp",
-    content: "(64) 9 9934-1815",
+    content: "(64) 9 9890-403",
     description: "Atendimento instantâneo",
-    action: "https://wa.me/5564999341815"
+    action: "https://wa.me/5564998904033?text=Olá! Estou entrando em contato através da página de contato do site da Codify."
   }];
   const socialLinks = [{
     icon: Linkedin,
@@ -171,7 +171,7 @@ const Contact = () => {
                     <label htmlFor="phone" className="text-sm font-medium text-foreground">
                       Telefone
                     </label>
-                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="(11) 99999-9999" />
+                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-muted-foreground transition-all duration-300" placeholder="(64) 98990-4033" />
                   </div>
                   
                   <div className="space-y-2">

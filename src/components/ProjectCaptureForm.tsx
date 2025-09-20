@@ -257,7 +257,7 @@ const ProjectCaptureFormComponent = ({ open, onOpenChange }: ProjectCaptureFormP
                     <FormItem>
                       <FormLabel>Telefone/WhatsApp *</FormLabel>
                       <FormControl>
-                        <Input placeholder="(64) 99999-9999" {...field} />
+                        <Input placeholder="(64) 98990-4033" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

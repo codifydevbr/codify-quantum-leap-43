@@ -2,8 +2,8 @@ import { BsWhatsapp } from "react-icons/bs";
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5564999341815"; // Brasil country code + number
-    const message = "Olá! Gostaria de conhecer mais sobre os serviços da Codify.";
+    const phoneNumber = "5564998904033"; // Brasil country code + number
+    const message = "Olá! Estou navegando no site da Codify e gostaria de conhecer mais sobre os serviços de desenvolvimento.";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');

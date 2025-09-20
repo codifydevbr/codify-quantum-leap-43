@@ -9,13 +9,13 @@ const FloatingActionButton = () => {
     {
       icon: MessageCircle,
       label: "WhatsApp",
-      href: "https://wa.me/5564999341815?text=Olá! Gostaria de conversar sobre um projeto.",
+      href: "https://wa.me/5564998904033?text=Olá! Vi suas informações de contato e gostaria de conversar sobre um projeto.",
       color: "bg-green-500 hover:bg-green-600"
     },
     {
       icon: Phone,
       label: "Ligar",
-      href: "tel:+5564999341815",
+      href: "tel:+5564998904033",
       color: "bg-blue-500 hover:bg-blue-600"
     },
     {

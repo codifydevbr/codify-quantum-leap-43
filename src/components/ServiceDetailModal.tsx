@@ -186,7 +186,7 @@ const ServiceDetailModal = ({ service, open, onOpenChange, onContactClick }: Ser
               size="lg" 
               className="flex-1"
               onClick={() => {
-                const phoneNumber = "5564999341815";
+                const phoneNumber = "5564998904033";
                 const message = `Olá! Gostaria de saber mais sobre o serviço: ${service.title}`;
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

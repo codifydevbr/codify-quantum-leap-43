@@ -214,8 +214,8 @@ const About = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <FuturisticButton variant="primary" size="lg" glow onClick={() => {
-            const phoneNumber = "5564999341815";
-            const message = "Olá! Gostaria de entrar em contato com a equipe da Codify.";
+            const phoneNumber = "5564998904033";
+            const message = "Olá! Acabei de conhecer a Codify através da página Sobre e gostaria de conversar sobre um projeto.";
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');

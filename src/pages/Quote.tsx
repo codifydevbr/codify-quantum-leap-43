@@ -353,7 +353,7 @@ const Quote = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 glass rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="(11) 99999-9999"
+                        placeholder="(64) 98990-4033"
                       />
                     </div>
                   </div>
